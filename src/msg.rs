@@ -1,8 +1,6 @@
 use cosmwasm_schema::{cw_serde, QueryResponses};
 use cosmwasm_std::Addr;
 
-use crate::state::Proof;
-
 #[cw_serde]
 pub struct ConfigResponse {
     pub owner: Addr,
@@ -30,7 +28,7 @@ pub enum ExecuteMsg {
 #[cw_serde]
 #[derive(QueryResponses)]
 pub enum QueryMsg {
-    #[returns(Proof)]
+    #[returns(crate::state::Proof)]
     Proof { report_hash: String },
     #[returns(ConfigResponse)]
     Config {},

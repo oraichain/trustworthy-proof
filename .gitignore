@@ -13,8 +13,9 @@ Cargo.lock
 **/*.wasm
 **/*.txt
 *.log
-
+build
 .registry_cache
 node_modules
 .env*
 .DS_Store
+.npmrc
