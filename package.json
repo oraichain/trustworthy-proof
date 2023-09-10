@@ -7,7 +7,6 @@
     "build/"
   ],
   "scripts": {
-    "build": "cwtools genjs .",
     "deploy": "yarn publish --access public --patch"
   },
   "dependencies": {
