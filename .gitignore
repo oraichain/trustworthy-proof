@@ -17,5 +17,6 @@ build
 .registry_cache
 node_modules
 .env*
+!.env.example
 .DS_Store
 .npmrc
