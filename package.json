@@ -1,0 +1,20 @@
+{
+  "name": "@oraichain/trustworthy-proof-contracts-sdk",
+  "version": "1.0.2",
+  "main": "build/index.js",
+  "license": "MIT",
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "build": "cwtools genjs .",
+    "deploy": "yarn publish --access public --patch"
+  },
+  "dependencies": {
+    "@cosmjs/amino": "^0.31.1",
+    "@cosmjs/cosmwasm-stargate": "^0.31.1",
+    "@cosmjs/crypto": "^0.31.1",
+    "@cosmjs/proto-signing": "^0.31.1",
+    "@cosmjs/stargate": "^0.31.1"
+  }
+}
