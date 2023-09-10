@@ -5,7 +5,7 @@ import { GasPrice } from '@cosmjs/stargate';
 
 export default async (argv, { decryptMnemonic }) => {
   const mnemonic = decryptMnemonic(argv.ENCRYPTED_MNEMONIC);
-  const [prefix, contractAddress] = [process.env.PREFIX, argv.address];
+  const [prefix, contractAddress, report_hash] = [process.env.PREFIX, argv.address, argv.reportHash];
   const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
     prefix
   });
@@ -20,12 +20,12 @@ export default async (argv, { decryptMnemonic }) => {
     contractAddress,
     {
       update_proof: {
-        report_hash: 'QmPTWAT6ySZ5LWEK736TBLZjZnpkHG9PHc2wtTpH7rJ26L',
+        report_hash,
         ai_provider: 'Oraichain'
       }
     },
     'auto'
   );
 
-  console.log(await client.queryContractSmart(contractAddress, { proof: { report_hash: 'QmPTWAT6ySZ5LWEK736TBLZjZnpkHG9PHc2wtTpH7rJ26L' } }));
+  console.log(await client.queryContractSmart(contractAddress, { proof: { report_hash } }));
 };
